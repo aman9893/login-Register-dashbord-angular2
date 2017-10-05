@@ -1,0 +1,34 @@
+﻿<div class="container-fluid">
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">MyWindow</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      
+       <li><a [routerLink]="['/dashbord']">dashbord</a></li>
+
+     <li><a [routerLink]="['/login']">Logout</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="col-md-12">
+
+    <h3>Welcome {{currentUser.firstName}} ! </h3>
+    <br>
+    <br>
+    <hr>
+    <h4>List of registered users:</h4>
+    <ul>
+        <li *ngFor="let user of users">
+          Username:  {{user.username}}<br>
+           {{user.firstName}} {{user.lastName}}
+            - <a (click)="deleteUser(user.id)">Delete</a>
+        </li>
+    </ul>
+    
+
+</div>
+</div>
